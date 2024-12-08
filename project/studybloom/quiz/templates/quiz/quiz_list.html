@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Quizzes</title>
+</head>
+<body>
+    <h1>Available Quizzes</h1>
+
+    {% if quizzes %}
+        <ul>
+            {% for quiz in quizzes %}
+                <li>
+                    <a href="{% url 'quiz_detail' quiz.id %}">{{ quiz.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No quizzes are available right now.</p>
+    {% endif %}
+</body>
+</html>

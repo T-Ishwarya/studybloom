@@ -1,0 +1,185 @@
+[
+  {
+    "model": "quiz.quiz",
+    "pk": 1,
+    "fields": {
+      "name": "General Knowledge"
+    }
+  },
+  {
+    "model": "quiz.question",
+    "pk": 1,
+    "fields": {
+      "quiz": 1,
+      "text": "What is the capital of France?"
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 1,
+    "fields": {
+      "question": 1,
+      "text": "Paris",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 2,
+    "fields": {
+      "question": 1,
+      "text": "Berlin",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 3,
+    "fields": {
+      "question": 1,
+      "text": "Madrid",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 4,
+    "fields": {
+      "question": 1,
+      "text": "Lisbon",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.question",
+    "pk": 2,
+    "fields": {
+      "quiz": 1,
+      "text": "Who is the inventor of Python language?"
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 5,
+    "fields": {
+      "question": 2,
+      "text": "Guido van Rossum",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 6,
+    "fields": {
+      "question": 2,
+      "text": "Dennis Ritchie",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 7,
+    "fields": {
+      "question": 2,
+      "text": "James Gosling",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 8,
+    "fields": {
+      "question": 2,
+      "text": "Bjarne Stroustrup",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.question",
+    "pk": 3,
+    "fields": {
+      "quiz": 1,
+      "text": "In which year was Python invented?"
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 9,
+    "fields": {
+      "question": 3,
+      "text": "1991",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 10,
+    "fields": {
+      "question": 3,
+      "text": "1989",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 11,
+    "fields": {
+      "question": 3,
+      "text": "1995",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 12,
+    "fields": {
+      "question": 3,
+      "text": "2000",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.question",
+    "pk": 4,
+    "fields": {
+      "quiz": 1,
+      "text": "What are the molecules present in the air?"
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 13,
+    "fields": {
+      "question": 4,
+      "text": "Oxygen, Nitrogen, Carbon Dioxide",
+      "is_correct": true
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 14,
+    "fields": {
+      "question": 4,
+      "text": "Oxygen, Hydrogen, Neon",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 15,
+    "fields": {
+      "question": 4,
+      "text": "Nitrogen, Argon, Methane",
+      "is_correct": false
+    }
+  },
+  {
+    "model": "quiz.answer",
+    "pk": 16,
+    "fields": {
+      "question": 4,
+      "text": "Helium, Xenon, Krypton",
+      "is_correct": false
+    }
+  }
+]

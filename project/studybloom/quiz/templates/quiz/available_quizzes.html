@@ -1,0 +1,26 @@
+<!-- quiz/templates/quiz/available_quizzes.html -->
+{% extends 'base_generic.html' %}
+
+{% block content %}
+    <h1>Available Quizzes</h1>
+
+    {% for data in quiz_data %}
+        <h2>{{ data.quiz.name }}</h2>
+
+        {% if data.questions %}
+            <ul>
+                {% for question in data.questions %}
+                    <li>{{ question.text }}</li>
+                    <!-- Display possible answers -->
+                    <ul>
+                        {% for answer in question.answer_set.all %}
+                            <li>{{ answer.text }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>1.What is the captial of paris?</p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

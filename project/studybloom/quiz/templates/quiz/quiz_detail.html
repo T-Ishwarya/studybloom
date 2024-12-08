@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ quiz.name }}</title>
+    <style>
+        body {
+            background-color: #d4f8e8;  /* Light green background */
+            font-family: Arial, sans-serif;  /* Clean font */
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        fieldset {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin-bottom: 15px;
+            background-color: #f8f8f8;  /* Light grey background for each question section */
+        }
+
+        legend {
+            font-weight: bold;
+        }
+
+        label {
+            font-size: 16px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #008CBA;  /* Blue background */
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #007bb5;  /* Darker blue on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ quiz.name }}</h1>
+
+    {% if questions %}
+        <form method="post">
+            {% csrf_token %}
+            {% for question in questions %}
+                <div>
+                    <h3>{{ forloop.counter }}. {{ question.text }}</h3>
+                    <ul>
+                        {% for answer in question.answers.all %}
+                            <li>
+                                <label>
+                                    <input type="radio" name="question_{{ question.id }}" value="{{ answer.id }}">
+                                    {{ answer.text }}
+                                </label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endfor %}
+            <button type="submit">Submit</button>
+        </form>
+    {% else %}
+        <fieldset>
+            <legend>1. What is the sum of 356 and 789?</legend>
+            <div>
+                <input type="checkbox" id="answer_1a" name="answers" value="1">
+                <label for="answer_1a">1045</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_1b" name="answers" value="2">
+                <label for="answer_1b">1135</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_1c" name="answers" value="3">
+                <label for="answer_1c">1125</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_1d" name="answers" value="4">
+                <label for="answer_1d">1245</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>2. Multiply 56 by 23.</legend>
+            <div>
+                <input type="checkbox" id="answer_2a" name="answers" value="1">
+                <label for="answer_2a">1153</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_2b" name="answers" value="2">
+                <label for="answer_2b">1250</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_2c" name="answers" value="3">
+                <label for="answer_2c">1288</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_2d" name="answers" value="4">
+                <label for="answer_2d">1108</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>3. Solve the equation: 3x + 7 = 22. What is the value of x?</legend>
+            <div>
+                <input type="checkbox" id="answer_3a" name="answers" value="1">
+                <label for="answer_3a">4</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_3b" name="answers" value="2">
+                <label for="answer_3b">5</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_3c" name="answers" value="3">
+                <label for="answer_3c">6</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_3d" name="answers" value="4">
+                <label for="answer_3d">7</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>4. What is the perimeter of a rectangle with length 10 cm and width 5 cm?</legend>
+            <div>
+                <input type="checkbox" id="answer_4a" name="answers" value="1">
+                <label for="answer_4a">40</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_4b" name="answers" value="2">
+                <label for="answer_4b">30</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_4c" name="answers" value="3">
+                <label for="answer_4c">25</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_4d" name="answers" value="4">
+                <label for="answer_4d">20</label>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>5. What is the perimeter of a rectangle with length 10 cm and width 5 cm?</legend>
+            <div>
+                <input type="checkbox" id="answer_5a" name="answers" value="1">
+                <label for="answer_5a">24 cm²</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_5b" name="answers" value="2">
+                <label for="answer_5b">48 cm²</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_5c" name="answers" value="3">
+                <label for="answer_5c">36 cm²</label>
+            </div>
+            <div>
+                <input type="checkbox" id="answer_5d" name="answers" value="4">
+                <label for="answer_5d">28 cm²</label>
+            </div>
+        </fieldset>
+        <button type="submit">Submit</button>
+    {% endif %}
+</body>
+</html>
